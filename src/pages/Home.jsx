@@ -28,12 +28,12 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background p-6 flex flex-col items-center">
-      <header className="w-full max-w-4xl flex justify-between items-center bg-white rounded-3xl p-4 shadow-sm border-4 border-white/50 mb-8">
-        <h1 className="text-3xl font-black text-primary">Englishcard ✨</h1>
+    <div className="min-h-screen bg-background p-4 md:p-6 flex flex-col items-center">
+      <header className="w-full max-w-4xl flex flex-col sm:flex-row justify-between items-center bg-white rounded-3xl p-4 shadow-sm border-4 border-white/50 mb-6 md:mb-8 gap-4">
+        <h1 className="text-2xl md:text-3xl font-black text-primary text-center">Englishcard ✨</h1>
         <button 
             onClick={() => navigate('/login')}
-            className="bg-gray-100 px-6 py-3 rounded-full font-bold text-gray-500 hover:bg-gray-200 transition-colors border-2 border-gray-200"
+            className="w-full sm:w-auto bg-gray-100 px-6 py-3 rounded-full font-bold text-gray-500 hover:bg-gray-200 transition-colors border-2 border-gray-200"
         >
             Login Ortu
         </button>

@@ -50,32 +50,40 @@ export default function FlashcardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background p-6 flex flex-col items-center">
-      <header className="w-full max-w-4xl flex justify-between items-center bg-white rounded-3xl p-4 shadow-sm border-4 border-white/50 mb-8">
-        <button onClick={() => navigate('/')} className="font-bold text-gray-500 hover:text-primary">
-          ⬅ Kembali
-        </button>
-        <div className="flex gap-2">
+    <div className="min-h-screen bg-background p-4 md:p-6 flex flex-col items-center">
+      <header className="w-full max-w-4xl flex flex-col md:flex-row justify-between items-center bg-white rounded-3xl p-4 shadow-sm border-4 border-white/50 mb-6 md:mb-8 gap-4">
+        
+        <div className="flex w-full md:w-auto justify-between items-center">
+            <button onClick={() => navigate('/')} className="font-bold text-gray-500 hover:text-primary">
+              ⬅ Kembali
+            </button>
+            <div className="md:hidden bg-accent px-4 py-2 rounded-full font-bold text-orange-800 shadow-sm border-2 border-orange-200 text-sm">
+              Score: {score} 🌟
+            </div>
+        </div>
+
+        <div className="flex gap-2 flex-wrap justify-center w-full md:w-auto">
             <button 
                 onClick={() => setMode('learn')}
-                className={`px-4 py-2 rounded-full font-bold transition-colors ${mode === 'learn' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+                className={`px-4 py-2 rounded-full font-bold transition-all ${mode === 'learn' ? 'bg-primary text-white shadow-md' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
             >
-                Learn
+                📖 Belajar
             </button>
             <button 
                 onClick={() => setMode('quiz')}
-                className={`px-4 py-2 rounded-full font-bold transition-colors ${mode === 'quiz' ? 'bg-accent text-orange-800' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+                className={`px-4 py-2 rounded-full font-bold transition-all ${mode === 'quiz' ? 'bg-secondary text-white shadow-md' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
             >
-                Quiz
+                🎮 Kuis
             </button>
             <button 
                 onClick={() => setMode('sentence')}
-                className={`px-4 py-2 rounded-full font-bold transition-colors ${mode === 'sentence' ? 'bg-secondary text-white' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+                className={`px-4 py-2 rounded-full font-bold transition-all ${mode === 'sentence' ? 'bg-purple-500 text-white shadow-md' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
             >
-                Sentence
+                🧩 Kalimat
             </button>
         </div>
-        <div className="bg-accent px-4 py-2 rounded-full font-bold text-orange-800 shadow-sm border-2 border-orange-200">
+
+        <div className="hidden md:block bg-accent px-4 py-2 rounded-full font-bold text-orange-800 shadow-sm border-2 border-orange-200">
           Score: {score} 🌟
         </div>
       </header>
