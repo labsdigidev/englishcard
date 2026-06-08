@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Nunito', 'Comic Sans MS', system-ui, sans-serif;
+  --color-primary: #FF6B6B;
+  --color-secondary: #4ECDC4;
+  --color-accent: #FFE66D;
+  --color-background: #F7FFF7;
+  --color-text: #2C3E50;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@utility perspective-1000 {
+  perspective: 1000px;
+}
+
+@utility preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@utility backface-hidden {
+  backface-visibility: hidden;
+}
