@@ -1,21 +1,41 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Flashcard from '../components/Flashcard';
 import SentenceBuilder from '../components/SentenceBuilder';
 import { audioController } from '../lib/audio';
-
-import { MOCK_CARDS } from '../lib/mockData';
+import { supabase } from '../lib/supabase';
 
 export default function FlashcardPage() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
-  const cards = MOCK_CARDS[categoryId] || [];
   
+  const [cards, setCards] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [mode, setMode] = useState('learn'); // 'learn', 'quiz', 'sentence'
   const [score, setScore] = useState(0);
 
-  if (cards.length === 0) return <div className="p-10 text-center">Category not found</div>;
+  useEffect(() => {
+    async function fetchCards() {
+      try {
+        const { data, error } = await supabase
+          .from('flashcards')
+          .select('*')
+          .eq('category_id', categoryId);
+          
+        if (error) throw error;
+        if (data) setCards(data);
+      } catch (err) {
+        console.error('Error fetching cards:', err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    if (categoryId) fetchCards();
+  }, [categoryId]);
+
+  if (loading) return <div className="p-10 text-center text-gray-500 font-bold animate-pulse">Loading Cards...</div>;
+  if (cards.length === 0) return <div className="p-10 text-center">Category not found or empty</div>;
 
   const currentCard = cards[currentIndex];
 
