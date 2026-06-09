@@ -5,6 +5,7 @@ import { Music, Music4 } from 'lucide-react';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import FlashcardPage from './pages/FlashcardPage';
+import DinoVsPage from './pages/DinoVsPage';
 
 function App() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
@@ -37,6 +38,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/play/:categoryId" element={<FlashcardPage />} />
+        <Route path="/vs-dino" element={<DinoVsPage />} />
       </Routes>
     </BrowserRouter>
   );

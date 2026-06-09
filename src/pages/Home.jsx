@@ -53,6 +53,18 @@ export default function Home() {
                   onClick={() => navigate(`/play/${category.id}`)}
                 />
               ))}
+              {/* VS Dino Game Card */}
+              <CategoryCard 
+                  key="vs-dino" 
+                  category={{
+                      id: 'vs-dino',
+                      name: 'VS Dino',
+                      iconUrl: '🦖',
+                      colorTheme: '#4ADE80',
+                      borderColor: '#22C55E'
+                  }}
+                  onClick={() => navigate('/vs-dino')}
+              />
             </div>
         )}
       </main>
