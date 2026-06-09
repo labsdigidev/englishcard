@@ -4,6 +4,7 @@ export const MOCK_CATEGORIES = [
   { id: 'numbers', name: 'Angka', iconUrl: '1️⃣', colorTheme: '#FFE66D', borderColor: '#d69e2e' },
   { id: 'colors', name: 'Warna', iconUrl: '🎨', colorTheme: '#9F7AEA', borderColor: '#6b46c1' },
   { id: 'activities', name: 'Kegiatan', iconUrl: '🏃', colorTheme: '#63B3ED', borderColor: '#3182CE' },
+  { id: 'adjectives', name: 'Sifat & Fisik', iconUrl: '🧑', colorTheme: '#F6E05E', borderColor: '#D69E2E' },
 ];
 
 export const MOCK_CARDS = {
@@ -156,5 +157,32 @@ export const MOCK_CARDS = {
     { id: 138, frontText: 'Button shirt', backText: 'Mengkancingkan kemeja', emoji: '👔', exampleSentence: 'I button my shirt', exampleTranslation: 'Saya mengkancingkan kemeja saya' },
     { id: 139, frontText: 'Zip jacket', backText: 'Meresleting jaket', emoji: '🧥', exampleSentence: 'I zip my jacket', exampleTranslation: 'Saya meresleting jaket saya' },
     { id: 140, frontText: 'Put on hat', backText: 'Memakai topi', emoji: '🧢', exampleSentence: 'I put on hat', exampleTranslation: 'Saya memakai topi' }
+  ],
+  'adjectives': [
+    { id: 141, frontText: 'Tall', backText: 'Tinggi', imageUrl: '/adjectives/tall.png', exampleSentence: 'He is very tall', exampleTranslation: 'Dia sangat tinggi' },
+    { id: 142, frontText: 'Short', backText: 'Pendek', imageUrl: '/adjectives/short.png', exampleSentence: 'The boy is short', exampleTranslation: 'Anak laki-laki itu pendek' },
+    { id: 143, frontText: 'Funny', backText: 'Lucu', imageUrl: '/adjectives/funny.png', exampleSentence: 'The clown is funny', exampleTranslation: 'Badut itu lucu' },
+    { id: 144, frontText: 'Kind', backText: 'Baik hati', imageUrl: '/adjectives/kind.png', exampleSentence: 'She is a kind girl', exampleTranslation: 'Dia adalah gadis yang baik hati' },
+    { id: 145, frontText: 'Strong', backText: 'Kuat', imageUrl: '/adjectives/strong.png', exampleSentence: 'The man is strong', exampleTranslation: 'Pria itu kuat' },
+    { id: 146, frontText: 'Weak', backText: 'Lemah', imageUrl: '/adjectives/weak.png', exampleSentence: 'The bird is weak', exampleTranslation: 'Burung itu lemah' },
+    { id: 147, frontText: 'Smart', backText: 'Pintar', imageUrl: '/adjectives/smart.png', exampleSentence: 'She is very smart', exampleTranslation: 'Dia sangat pintar' },
+    { id: 148, frontText: 'Silly', backText: 'Konyol', imageUrl: '/adjectives/silly.png', exampleSentence: 'He is acting silly', exampleTranslation: 'Dia bertingkah konyol' },
+    { id: 149, frontText: 'Brave', backText: 'Berani', imageUrl: '/adjectives/brave.png', exampleSentence: 'The hero is brave', exampleTranslation: 'Pahlawan itu berani' },
+    { id: 150, frontText: 'Shy', backText: 'Pemalu', imageUrl: '/adjectives/shy.png', exampleSentence: 'The little girl is shy', exampleTranslation: 'Gadis kecil itu pemalu' },
+    { id: 151, frontText: 'Lazy', backText: 'Malas', imageUrl: '/adjectives/lazy.png', exampleSentence: 'The cat is lazy', exampleTranslation: 'Kucing itu malas' },
+    { id: 152, frontText: 'Diligent', backText: 'Rajin', imageUrl: '/adjectives/diligent.png', exampleSentence: 'The student is diligent', exampleTranslation: 'Murid itu rajin' },
+    { id: 153, frontText: 'Beautiful', backText: 'Cantik', imageUrl: '/adjectives/beautiful.png', exampleSentence: 'The princess is beautiful', exampleTranslation: 'Putri itu cantik' },
+    { id: 154, frontText: 'Handsome', backText: 'Tampan', imageUrl: '/adjectives/handsome.png', exampleSentence: 'The prince is handsome', exampleTranslation: 'Pangeran itu tampan' },
+    { id: 155, frontText: 'Cute', backText: 'Imut', imageUrl: '/adjectives/cute.png', exampleSentence: 'The baby is cute', exampleTranslation: 'Bayi itu imut' },
+    { id: 156, frontText: 'Fat', backText: 'Gemuk', imageUrl: '/adjectives/fat.png', exampleSentence: 'The bear is fat', exampleTranslation: 'Beruang itu gemuk' },
+    { id: 157, frontText: 'Thin', backText: 'Kurus', imageUrl: '/adjectives/thin.png', exampleSentence: 'The stick is thin', exampleTranslation: 'Tongkat itu kurus' },
+    { id: 158, frontText: 'Old', backText: 'Tua', imageUrl: '/adjectives/old.png', exampleSentence: 'My grandfather is old', exampleTranslation: 'Kakek saya sudah tua' },
+    { id: 159, frontText: 'Young', backText: 'Muda', imageUrl: '/adjectives/young.png', exampleSentence: 'The boy is young', exampleTranslation: 'Anak laki-laki itu muda' },
+    { id: 160, frontText: 'Happy', backText: 'Bahagia', imageUrl: '/adjectives/happy.png', exampleSentence: 'I am very happy', exampleTranslation: 'Saya sangat bahagia' },
+    { id: 161, frontText: 'Sad', backText: 'Sedih', imageUrl: '/adjectives/sad.png', exampleSentence: 'The girl is sad', exampleTranslation: 'Gadis itu sedih' },
+    { id: 162, frontText: 'Angry', backText: 'Marah', imageUrl: '/adjectives/angry.png', exampleSentence: 'The dog is angry', exampleTranslation: 'Anjing itu marah' },
+    { id: 163, frontText: 'Calm', backText: 'Tenang', imageUrl: '/adjectives/calm.png', exampleSentence: 'The water is calm', exampleTranslation: 'Airnya tenang' },
+    { id: 164, frontText: 'Polite', backText: 'Sopan', imageUrl: '/adjectives/polite.png', exampleSentence: 'He is a polite boy', exampleTranslation: 'Dia adalah anak yang sopan' },
+    { id: 165, frontText: 'Tired', backText: 'Lelah', imageUrl: '/adjectives/tired.png', exampleSentence: 'I am tired today', exampleTranslation: 'Saya lelah hari ini' }
   ]
 };
