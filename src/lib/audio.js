@@ -26,6 +26,25 @@ class AudioController {
   playCorrect() {
     this.correctSfx.currentTime = 0;
     this.correctSfx.play().catch(e => console.log('Audio play prevented:', e));
+    this.playCorrectVoice();
+  }
+
+  playCorrectVoice() {
+    const phrases = ["Amazing", "Good job", "Nice", "Great"];
+    const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+    const utterance = new SpeechSynthesisUtterance(phrase);
+    utterance.lang = 'en-US';
+    // slightly cheerful pitch
+    utterance.pitch = 1.2;
+    window.speechSynthesis.speak(utterance);
+  }
+
+  playWrongVoice() {
+    const utterance = new SpeechSynthesisUtterance("Oops! Try Again Please");
+    utterance.lang = 'en-US';
+    // slightly sad/gentle pitch
+    utterance.pitch = 0.9;
+    window.speechSynthesis.speak(utterance);
   }
 
   toggleBgm() {

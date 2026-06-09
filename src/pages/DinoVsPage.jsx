@@ -88,6 +88,7 @@ export default function DinoVsPage() {
           }
       } else {
           // Wrong! Penalty: rope pulled to B (+)
+          audioController.playWrongVoice();
           setWrongAnswerA(answerText);
           const newPos = ropePosition + 1;
           setRopePosition(newPos);
@@ -112,6 +113,7 @@ export default function DinoVsPage() {
           }
       } else {
           // Wrong! Penalty: rope pulled to A (-)
+          audioController.playWrongVoice();
           setWrongAnswerB(answerText);
           const newPos = ropePosition - 1;
           setRopePosition(newPos);

@@ -25,12 +25,13 @@ export default function Flashcard({ card, isQuizMode, onCorrectAnswer }) {
       setIsFlipped(true); // reveal
       if (onCorrectAnswer) onCorrectAnswer();
     } else {
+      import('../lib/audio').then(m => m.audioController.playWrongVoice());
       alert("Oops! Coba lagi ya!");
     }
   };
 
   return (
-    <div className="w-80 h-[26rem] perspective-1000 relative">
+    <div className="w-80 md:w-96 h-[26rem] md:h-[32rem] perspective-1000 relative">
       <motion.div
         className="w-full h-full relative preserve-3d cursor-pointer"
         onClick={handleFlip}
@@ -47,9 +48,9 @@ export default function Flashcard({ card, isQuizMode, onCorrectAnswer }) {
           
           <div className="flex-1 flex items-center justify-center w-full mt-8">
             {card.imageUrl ? (
-              <img src={card.imageUrl} alt="Flashcard" className="max-w-full max-h-48 object-contain rounded-2xl drop-shadow-md" />
+              <img src={card.imageUrl} alt="Flashcard" className="max-w-full max-h-48 md:max-h-64 object-contain rounded-2xl drop-shadow-md" />
             ) : (
-              <div className="w-48 h-48 bg-gray-100 rounded-3xl flex items-center justify-center text-7xl shadow-inner border-4 border-white">
+              <div className="w-48 md:w-64 h-48 md:h-64 bg-gray-100 rounded-3xl flex items-center justify-center text-7xl md:text-8xl shadow-inner border-4 border-white">
                 {card.emoji || '❓'}
               </div>
             )}
@@ -83,8 +84,8 @@ export default function Flashcard({ card, isQuizMode, onCorrectAnswer }) {
           className="absolute w-full h-full backface-hidden bg-primary rounded-[2rem] shadow-xl border-b-8 border-r-8 border-red-600 p-6 flex flex-col items-center justify-center"
           style={{ transform: 'rotateY(180deg)' }}
         >
-           <h2 className="text-6xl font-black text-white tracking-tight mb-2 drop-shadow-md">{card.frontText}</h2>
-           <p className="text-2xl text-red-100 font-bold mb-8 bg-black/10 px-4 py-2 rounded-full">{card.backText}</p>
+           <h2 className="text-6xl md:text-7xl font-black text-white tracking-tight mb-2 drop-shadow-md">{card.frontText}</h2>
+           <p className="text-2xl md:text-3xl text-red-100 font-bold mb-8 bg-black/10 px-4 py-2 rounded-full">{card.backText}</p>
            
            <button 
              onClick={handleAudio}

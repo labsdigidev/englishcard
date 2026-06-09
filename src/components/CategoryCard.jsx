@@ -1,6 +1,21 @@
 import { motion } from 'framer-motion';
 
 export default function CategoryCard({ category, onClick }) {
+  const categoryEnglishMap = {
+    fruits: 'Fruits',
+    animals: 'Animals',
+    numbers: 'Numbers',
+    colors: 'Colors',
+    activities: 'Activities',
+    adjectives: 'Adjectives',
+    'vs-dino': 'VS Dino'
+  };
+  
+  const englishName = categoryEnglishMap[category.id];
+  const displayName = englishName && category.name !== englishName 
+        ? `${category.name} (${englishName})` 
+        : category.name;
+
   return (
     <motion.div
       onClick={onClick}
@@ -15,7 +30,7 @@ export default function CategoryCard({ category, onClick }) {
       <div className="text-6xl mb-4 bg-white/50 w-24 h-24 rounded-full flex items-center justify-center shadow-inner">
         {category.iconUrl}
       </div>
-      <h3 className="text-2xl font-black text-gray-800 tracking-wide">{category.name}</h3>
+      <h3 className="text-2xl font-black text-gray-800 tracking-wide text-center leading-tight">{displayName}</h3>
     </motion.div>
   );
 }
